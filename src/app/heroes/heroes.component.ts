@@ -9,13 +9,20 @@ import { HEROES } from './mock-heroes';
 })
 export class HeroesComponent implements OnInit {
   heroes: IHero[] = HEROES;
-  selectedHero?: IHero;
+  selectedHero?: IHero | undefined;
+  isSelected: boolean = false;
 
   public constructor() {}
 
   public ngOnInit(): void {}
 
   onSelect(hero: IHero): void {
-    this.selectedHero = hero;
+    this.isSelected = true;
+    if (this.selectedHero === hero) {
+      this.isSelected = false;
+      this.selectedHero = undefined;
+    } else {
+      this.selectedHero = hero;
+    }
   }
 }
