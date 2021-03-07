@@ -8,13 +8,13 @@ import { HEROES } from '../heroes/mock-heroes';
   styleUrls: ['./hero-detail.component.css'],
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero?: IHero;
+  @Input() public hero?: IHero;
 
-  constructor() {}
+  public constructor() {}
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
 
-  rename(id: number, str: string) {
+  public rename(id: number, str: string): void {
     for (const hero of HEROES) {
       if (hero.id === id) {
         hero.name = str;
