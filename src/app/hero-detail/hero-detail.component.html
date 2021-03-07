@@ -3,7 +3,16 @@
   <div><span>ID: </span>{{ hero.id }}.</div>
   <div>
     <label for="hero-name">Hero name: </label>
-    <input #newHeroName id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
-    <button (click)="rename(hero.id, newHeroName.value)">Save</button>
+    <input
+      #newHeroName
+      id="hero-name"
+      [(ngModel)]="hero.name"
+      placeholder="name"
+    />
+    <button class="rename-btn" (click)="rename(hero.id, newHeroName.value)">Save</button>
+  </div>
+  <div class="hero-photo">
+    <span>Hero photo:</span>
+    <img class="hero-img" src="{{ hero.photo }}" alt="hero-photo" />
   </div>
 </div>

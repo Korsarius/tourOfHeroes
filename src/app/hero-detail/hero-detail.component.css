@@ -1,0 +1,14 @@
+.rename-btn{
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.hero-photo {
+  display: flex;
+  flex-direction: column;
+}
+.hero-img {
+  width: 300px;
+  height: 300px;
+  margin-top: 5px;
+  object-fit: cover;
+}
