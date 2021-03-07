@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #0000ff;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #ff0000;
+}
+
+a + a {
+  margin-left: 10px;
+}

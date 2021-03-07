@@ -1,4 +1,9 @@
 /* HeroesComponent's private CSS styles */
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .my-heroes {
   display: flex;
 }
