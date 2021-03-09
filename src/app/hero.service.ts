@@ -78,6 +78,21 @@ export class HeroService {
     );
   }
 
+  /** PUT: update the hero on the server */
+  public deleteHeroPower(hero: IHero, index: number): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap((_) => this.log(`update hero id=${hero.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
+  /** PUT: update the hero on the server */
+  public addHeroPower(hero: IHero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap((_) => this.log(`update hero id=${hero.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
+
   /* GET heroes whose name contains search term */
   public searchHeroes(term: string): Observable<IHero[]> {
     if (!term.trim()) {

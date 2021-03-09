@@ -11,8 +11,41 @@
     />
   </div>
   <div class="hero-photo">
-    <span>Hero photo:</span>
+    <h4>Hero photo:</h4>
     <img class="hero-img" src="{{ hero.photo }}" alt="hero-photo" />
+  </div>
+  <div class="hero-powers">
+    <h4>Hero powers:</h4>
+    <ol class="hero-powers-list">
+      <li
+        class="hero-power-li"
+        *ngFor="let power of hero.powers; let i = index"
+      >
+        <span>{{ power }}</span>
+        <button
+          class="delete-power"
+          title="delete hero power"
+          (click)="delete(i)"
+        >
+          X
+        </button>
+      </li>
+    </ol>
+    <div class="add-hero-power">
+      <label for="new-hero-power">Add new Hero Power:</label>
+      <input
+        id="new-hero-power"
+        for="new-hero-p"
+        #heroPower
+        placeholder="Enter New Hero Power"
+      />
+      <button
+        class="add-hero-btn"
+        (click)="add(heroPower.value); heroPower.value = ''"
+      >
+        Add Power
+      </button>
+    </div>
   </div>
   <button class="save-btn" (click)="save()">Save</button>
   <button (click)="goBack()">Go Back</button>

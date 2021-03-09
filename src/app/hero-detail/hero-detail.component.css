@@ -5,8 +5,14 @@
 .hero-img {
   width: 300px;
   height: 300px;
-  margin-top: 5px;
+  margin: 5px 0 10px;
   object-fit: cover;
+}
+
+h4 {
+  margin: 0;
+  font-weight: bold;
+  color: #435960;
 }
 
 /* HeroDetailComponent's private CSS styles */
@@ -36,4 +42,106 @@ button:disabled {
   background-color: #eee;
   color: #ccc;
   cursor: auto;
+}
+
+.hero-powers {
+  width: 50%;
+  border: 5px solid #42545c;
+  border-radius: 10px/20px;
+  padding: 10px;
+}
+
+.hero-powers-list {
+  margin-bottom: 8px;
+  padding: 0;
+  list-style: none;
+  counter-reset: li;
+  cursor: pointer;
+}
+.hero-powers-list li {
+  position: relative;
+  border: 2px solid #dddddd;
+  background: #fafafa;
+  padding: 2px 5px 2px 28px;
+  margin: 12px 0 12px 40px;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hero-powers-list li:hover {
+  background: #f0f5fb;
+  border: 2px solid #adcee9;
+}
+.hero-powers-list li:before {
+  line-height: 32px;
+  position: absolute;
+  top: 4px;
+  left: -40px;
+  width: 40px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #77aedb;
+  counter-increment: li;
+  content: counter(li);
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.hero-powers-list li:hover:before {
+  width: 46px;
+  background: #337ab7;
+}
+.hero-powers-list li:after {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  content: "";
+  height: 0;
+  width: 0;
+  border: 16px solid transparent;
+  border-left-color: #77aedb;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.hero-powers-list li:hover:after {
+  margin-left: 6px;
+  border-left-color: #337ab7;
+}
+.denamus {
+  width: 540px;
+}
+
+.hero-power-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-power {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  background-color: #eee;
+  border-radius: 4px;
+  border: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.add-hero-power {
+  display: flex;
+  align-items: baseline;
+}
+
+.add-hero-power label {
+  flex-grow: 1;
+}
+
+.add-hero-power input {
+  flex-grow: 10;
+  margin-right: 10px;
+}
+
+.add-hero-power button {
+  margin-top: 0;
+  padding: 10px;
 }

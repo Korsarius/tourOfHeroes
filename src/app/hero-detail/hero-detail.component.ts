@@ -37,4 +37,23 @@ export class HeroDetailComponent implements OnInit {
   public goBack(): void {
     this.location.back();
   }
+
+  public delete(index: number): void {
+    if (this.hero) {
+      this.hero.powers = this.hero.powers.filter((item, i) => i !== index);
+      console.log('hero.powers: ', this.hero);
+      this.heroService.deleteHeroPower(this.hero, index).subscribe();
+    }
+  }
+
+  public add(power: string): void {
+    power = power.trim();
+    if (!power) {
+      return;
+    }
+    if (this.hero) {
+      this.hero.powers.push(power);
+      this.heroService.addHeroPower(this.hero).subscribe();
+    }
+  }
 }
