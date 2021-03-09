@@ -1,14 +1,26 @@
-a {
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+nav a {
+  padding: 1rem;
   text-decoration: none;
-  cursor: pointer;
-  color: #0000ff;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
 }
-
-a:hover {
-  text-decoration: underline;
-  color: #ff0000;
+nav a:hover {
+  color: white;
+  background-color: #42545c;
 }
-
-a + a {
+nav a.active {
+  background-color: black;
+}
+nav a + a {
   margin-left: 10px;
 }
