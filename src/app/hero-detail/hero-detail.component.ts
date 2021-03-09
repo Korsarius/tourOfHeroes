@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { IHero } from '../heroes/IHero';
-import { HEROES } from '../heroes/mock-heroes';
 import { HeroService } from '../hero.service';
 
 @Component({
@@ -29,13 +28,10 @@ export class HeroDetailComponent implements OnInit {
     this.heroService.getHero(id).subscribe((hero) => (this.hero = hero));
   }
 
-  public rename(id: number, str: string): void {
-    for (const hero of HEROES) {
-      if (hero.id === id) {
-        hero.name = str;
-      }
+  public save(): void {
+    if (this.hero) {
+      this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
     }
-    console.log('HEROES: ', HEROES);
   }
 
   public goBack(): void {

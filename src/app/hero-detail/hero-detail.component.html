@@ -9,13 +9,11 @@
       [(ngModel)]="hero.name"
       placeholder="name"
     />
-    <button class="rename-btn" (click)="rename(hero.id, newHeroName.value)">
-      Save
-    </button>
   </div>
   <div class="hero-photo">
     <span>Hero photo:</span>
     <img class="hero-img" src="{{ hero.photo }}" alt="hero-photo" />
   </div>
+  <button class="save-btn" (click)="save()">save</button>
   <button (click)="goBack()">Go Back</button>
 </div>

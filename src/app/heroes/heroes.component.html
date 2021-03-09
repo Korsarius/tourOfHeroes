@@ -1,10 +1,45 @@
 <h2>My Heroes</h2>
 <section class="my-heroes">
   <ul class="heroes">
-    <a *ngFor="let hero of heroes" routerLink="/detail/{{ hero.id }}">
-      <li>
-        <span class="badge">{{ hero.id }}</span> {{ hero.name }}
-      </li>
-    </a>
+    <li *ngFor="let hero of heroes">
+      <span class="badge">{{ hero.id }}</span>
+      <a routerLink="/detail/{{ hero.id }}">{{ hero.name }}</a>
+      <button class="delete" title="delete hero" (click)="delete(hero)">
+        X
+      </button>
+    </li>
   </ul>
+  <div class="create-new-hero">
+    <h3>Create new Hero:</h3>
+    <div>
+      <label for="new-hero-name" id="new-hero-name-label">Hero name:</label>
+      <input
+        id="new-hero-name"
+        for="new-hero"
+        #heroName
+        placeholder="Enter Hero's name"
+      />
+    </div>
+    <div>
+      <label for="new-hero-img" id="new-hero-img-label">Hero photo(url):</label>
+      <input
+        id="new-hero-img"
+        for="new-hero"
+        #heroImg
+        placeholder="Enter Hero's img in url format"
+      />
+    </div>
+    <div>
+      <button
+        class="add-hero-btn"
+        (click)="
+          add(heroName.value, heroImg.value);
+          heroName.value = '';
+          heroImg.value = ''
+        "
+      >
+        Add hero
+      </button>
+    </div>
+  </div>
 </section>
